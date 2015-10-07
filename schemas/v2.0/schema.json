@@ -926,7 +926,16 @@
       },
       "properties": {
         "$ref": {
-          "type": "string"
+          "oneOf": [
+            {
+              "type": "string",
+              "pattern": "^#/(?:definitions/[^/]+|(?:[^/]+/)*x-[^/]*/[^/]+)$"
+            },
+            {
+              "type": "string",
+              "pattern": "[^#]"
+            }
+          ]
         },
         "format": {
           "type": "string"
